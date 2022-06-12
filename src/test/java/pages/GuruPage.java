@@ -1,6 +1,5 @@
 package pages;
 
-import org.bouncycastle.est.LimitedSource;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,9 +12,14 @@ public class GuruPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//span[text()='Accept All']")
-    public WebElement cookies;
+    @FindBy(xpath = "(//div[@class='action-wrapper'])[3]")
+    public WebElement acceptCookies;
 
     @FindBy(xpath = "//thead//tr//th")
     public List<WebElement> baslikListesi;
+
+    @FindBy(id="gdpr-consent-notice")
+    public WebElement cookiesIframe;
+
+
 }
